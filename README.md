@@ -36,7 +36,7 @@ MySQL → Supabase 数据同步工具（MVP 版）
 
 ## 配置文件示例（MVP）
 
-> ⚠️ 敏感信息（如数据库密码、API Key）必须通过环境变量设置，配置文件中用 `${ENV_NAME}` 占位。
+> ⚠️ 敏感信息（如数据库密码、API Key）必须通过环境变量设置，配置文件中用 `${ENV_NAME}` 占位。环境变量名需与 config.yaml、launch.json、代码保持一致。
 
 ```yaml
 mysql:
@@ -44,11 +44,11 @@ mysql:
   port: 3306
   user: root
   password: ${MYSQL_PASSWORD}
-  database: source_db
+  database: olh
 
 supabase:
-  url: https://your-project.supabase.co
-  api_key: ${SUPABASE_API_KEY}
+  url: https://你的项目id.supabase.co  # ⚠️ 请替换为你自己的 Supabase 项目 URL
+  api_key: ${SUPABASE_ANON_KEY}
   schema: public
 
 table:
@@ -72,7 +72,7 @@ table:
 
 ```sh
 export MYSQL_PASSWORD=yourpassword
-export SUPABASE_API_KEY=your_anon_or_service_key
+export SUPABASE_ANON_KEY=your_anon_or_service_key
 ```
 
 ## 典型流程（MVP）

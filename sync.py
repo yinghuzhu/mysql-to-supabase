@@ -66,10 +66,12 @@ def upsert_supabase_row(supa_cfg, table, row, pk):
     row = serialize_row(row)  # 修复datetime序列化
     resp = requests.post(url, json=[row], headers=headers)
     if resp.ok:
-        print(f"upsert row: {row['id']}")
+        try:
+            print(f"upsert row: {row[pk]}")
+        except Exception:
+            print(f"upsert row: {row}")
     else:
         print(f"[ERROR] Failed to upsert row: {resp.text}")
-    
     return resp
 
 # 获取上次同步点（本地文件）
