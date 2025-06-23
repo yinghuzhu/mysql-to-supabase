@@ -1,0 +1,27 @@
+mysql:
+  host: localhost
+  port: 3306
+  user: root
+  password: ${MYSQL_PASSWORD}
+  database: olh
+
+supabase:
+  url: ${SUPABASE_URL}
+  api_key: ${SUPABASE_ANON_KEY}
+  schema: public
+
+table:
+  source: supplier_product
+  target: supplier_product
+  key: id
+  # 可选：增量同步的时间戳字段
+  timestamp_field: updated_at
+  fields:
+    - id
+    - supplier_id
+    - product_code
+    - product_status
+    - category_id
+    - backup_code
+    - created_at
+    - updated_at 

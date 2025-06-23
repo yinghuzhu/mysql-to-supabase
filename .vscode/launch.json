@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Debug sync.py incr (with env)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/sync.py",
+            "args": ["incr"],
+            "console": "integratedTerminal",
+            "env": {
+                "MYSQL_PASSWORD": "12345678",
+                "SUPABASE_URL": "https://imetwwimvyrltrzwvkhz.supabase.co",
+                "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltZXR3d2ltdnlybHRyend2a2h6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA1MjEzOTYsImV4cCI6MjA2NjA5NzM5Nn0.tyazTarRKaaFCChy2Glb3GRyQ7c3koR0z-eQc5d843Q"
+            }
+        }
+    ]
+}

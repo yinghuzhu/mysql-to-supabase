@@ -36,17 +36,19 @@ MySQL → Supabase 数据同步工具（MVP 版）
 
 ## 配置文件示例（MVP）
 
+> ⚠️ 敏感信息（如数据库密码、API Key）必须通过环境变量设置，配置文件中用 `${ENV_NAME}` 占位。
+
 ```yaml
 mysql:
   host: localhost
   port: 3306
   user: root
-  password: yourpassword
+  password: ${MYSQL_PASSWORD}
   database: source_db
 
 supabase:
   url: https://your-project.supabase.co
-  api_key: your_anon_or_service_key
+  api_key: ${SUPABASE_API_KEY}
   schema: public
 
 table:
@@ -64,6 +66,13 @@ table:
     - backup_code
     - created_at
     - updated_at
+```
+
+### 环境变量设置示例
+
+```sh
+export MYSQL_PASSWORD=yourpassword
+export SUPABASE_API_KEY=your_anon_or_service_key
 ```
 
 ## 典型流程（MVP）
